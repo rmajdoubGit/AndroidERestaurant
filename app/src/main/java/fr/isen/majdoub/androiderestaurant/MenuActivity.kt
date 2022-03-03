@@ -15,11 +15,8 @@ class MenuActivity : AppCompatActivity() {
             val textview : TextView = findViewById<Button>(R.id.Configtitle)
             val str= intent.getStringExtra("config")
             textview.text = str
-
-
-
             }
-            }
-        }
+    }
+}
 
 

@@ -13,22 +13,22 @@ class HomeActivity : AppCompatActivity() {
         val mButtonStarter : Button = findViewById<Button>(R.id.StarterButton)
         val mButtonDish : Button = findViewById<Button>(R.id.DishButton)
         val mButtonDessert : Button = findViewById<Button>(R.id.DessertButton)
-        val intent = Intent(this, MenuActivity::class.java)
+
         mButtonStarter.setOnClickListener {
-
-            intent.putExtra("config","starter")
-            startActivity(intent)
+            chooseCatergory("starter")
         }
-
         mButtonDish.setOnClickListener {
-
-            intent.putExtra("config","dishes")
-            startActivity(intent)
+            chooseCatergory("dishes")
         }
-
         mButtonDessert.setOnClickListener {
-            intent.putExtra("config","dishes")
-            startActivity(intent)
+            chooseCatergory("dessert")
         }
+
     }
+    private fun chooseCatergory(string: String) {
+        val intent = Intent(this, MenuActivity::class.java)
+        intent.putExtra("config",string)
+        startActivity(intent)
+    }
+
 }
