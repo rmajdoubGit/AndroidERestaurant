@@ -13,7 +13,7 @@ class MenuActivity : AppCompatActivity() {
         val intent = intent
         if (intent != null) {
             val textview : TextView = findViewById<Button>(R.id.Configtitle)
-            val str= intent.getStringExtra("config")
+            val str= intent.getStringExtra(HomeActivity.CATEGORY_KEY)
             textview.text = str
             }
     }
