@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="130dp"
         android:layout_height="55dp"
-        android:text="bonjour"
+        android:text="bonjour toi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintLeft_toLeftOf="parent"
