@@ -6,13 +6,29 @@
     <string name="home_dish">Plats</string>
     <string name="home_desert">Desserts</string>
 
-    <string-array name="home_starter">
+    <string-array name="starter_list">
 
-        <item>Cars</item>
-        <item>Bikes</item>
-        <item>RVs</item>
+        <item>Salade</item>
+        <item>Poisson</item>
+        <item>TOmates</item>
         <item>Trucks</item>
         <item>Other Vehicles</item>
+    </string-array>
 
+    <string-array name="dish_list">
+
+        <item>Riz avec saumon</item>
+        <item>Kebab</item>
+        <item>Tacos</item>
+        <item>Trucks</item>
+        <item>Other Vehicles</item>
+    </string-array>
+    <string-array name="dessert_list">
+
+        <item>Dame Blanche</item>
+        <item>Glace</item>
+        <item>Tiramisu</item>
+        <item>Brownie</item>
+        <item>Other Vehicles</item>
     </string-array>
 </resources>

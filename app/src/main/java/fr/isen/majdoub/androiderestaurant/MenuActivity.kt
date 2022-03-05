@@ -1,11 +1,9 @@
 package fr.isen.majdoub.androiderestaurant
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.majdoub.androiderestaurant.databinding.ActivityCategoryBinding
-
 
 
 class MenuActivity : AppCompatActivity() {
@@ -18,17 +16,26 @@ class MenuActivity : AppCompatActivity() {
         setContentView(view)
         //setContentView(R.layout.activity_configuraiton)
         val intent = intent
-
-        //val textview : TextView = findViewById<Button>(R.id.Configtitle)
+        var array: kotlin.Array<out String> = resources.getStringArray(R.array.starter_list)
+      //val textview : TextView = findViewById<Button>(R.id.Configtitle)
         val str= intent.getStringExtra(HomeActivity.CATEGORY_KEY)
         binding.categoryTitle.text = str
+        if(str=="Entrées"){
+           array = resources.getStringArray(R.array.starter_list)
+        }
+        else if (str=="Plats"){
+            array = resources.getStringArray(R.array.dish_list)
+        }
+        else if (str=="Desserts"){
+            array = resources.getStringArray(R.array.dessert_list)
+        }
 
         // getting the recyclerview by its id
         //val recyclerview = findViewById<RecyclerView>(R.id.ListCategory)
 
         // this creates a vertical layout Manager
         binding.ListCategory.layoutManager = LinearLayoutManager(this)
-       // binding.ListCategory.adapter = CategoryAdapter(arrayListOf(<String>()))
+        binding.ListCategory.adapter = CategoryAdapter(array)
 
         // ArrayList of class ItemsViewModel
         val data = ArrayList<ItemsViewModel>()
@@ -40,10 +47,10 @@ class MenuActivity : AppCompatActivity() {
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = CategoryAdapter(data)
+        //val adapter = CategoryAdapter(data)
 
         // Setting the Adapter with the recyclerview
-        binding.ListCategory.adapter = adapter
+        //binding.ListCategory.adapter = adapter
 
 
     }
