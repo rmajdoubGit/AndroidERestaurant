@@ -5,4 +5,14 @@
     <string name="home_starter">Entrées</string>
     <string name="home_dish">Plats</string>
     <string name="home_desert">Desserts</string>
+
+    <string-array name="home_starter">
+
+        <item>Cars</item>
+        <item>Bikes</item>
+        <item>RVs</item>
+        <item>Trucks</item>
+        <item>Other Vehicles</item>
+
+    </string-array>
 </resources>

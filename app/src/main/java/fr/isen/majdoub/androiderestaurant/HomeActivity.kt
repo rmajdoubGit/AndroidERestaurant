@@ -1,28 +1,32 @@
 package fr.isen.majdoub.androiderestaurant
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import fr.isen.majdoub.androiderestaurant.databinding.ActivityHomeBinding
 
 
 class HomeActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        val mButtonStarter : Button = findViewById<Button>(R.id.StarterButton)
-        val mButtonDish : Button = findViewById<Button>(R.id.DishButton)
-        val mButtonDessert : Button = findViewById<Button>(R.id.DessertButton)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        //setContentView(R.layout.activity_home)
+        //val mButtonStarter : Button = findViewById<Button>(R.id.StarterButton)
+        //val mButtonDish : Button = findViewById<Button>(R.id.DishButton)
+        //val mButtonDessert : Button = findViewById<Button>(R.id.DessertButton)
 
-        mButtonStarter.setOnClickListener {
+        binding.StarterButton.setOnClickListener {
             chooseCatergory(getString(R.string.home_starter))
         }
-        mButtonDish.setOnClickListener {
+        binding.DishButton.setOnClickListener {
             chooseCatergory(getString(R.string.home_dish))
         }
-        mButtonDessert.setOnClickListener {
+        binding.DessertButton.setOnClickListener {
             chooseCatergory(getString(R.string.home_desert))
         }
 
