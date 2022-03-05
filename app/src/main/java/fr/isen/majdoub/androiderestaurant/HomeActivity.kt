@@ -15,10 +15,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        //setContentView(R.layout.activity_home)
-        //val mButtonStarter : Button = findViewById<Button>(R.id.StarterButton)
-        //val mButtonDish : Button = findViewById<Button>(R.id.DishButton)
-        //val mButtonDessert : Button = findViewById<Button>(R.id.DessertButton)
 
         binding.StarterButton.setOnClickListener {
             chooseCatergory(getString(R.string.home_starter))

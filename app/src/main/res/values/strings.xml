@@ -13,6 +13,7 @@
         <item>TOmates</item>
         <item>Trucks</item>
         <item>Other Vehicles</item>
+        <item>Other Vehicles</item>
     </string-array>
 
     <string-array name="dish_list">
@@ -31,4 +32,30 @@
         <item>Brownie</item>
         <item>Other Vehicles</item>
     </string-array>
+
+    <string-array name="starter_details">
+        <item>une salade composé de tomates cuites avec carrotes</item>
+        <item>poisson frais </item>
+        <item>Tiramisu</item>
+        <item>Brownie</item>
+        <item>Other Vehicles</item>
+    </string-array>
+
+    <string-array name="dish_details">
+        <item>Riz avec du saumon</item>
+        <item>kebab STO </item>
+        <item>Tacos 3 viandes</item>
+        <item>Brownie</item>
+        <item>Other Vehicles</item>
+    </string-array>
+
+    <string-array name="dessert_details">
+        <item>Glace avec vanille de madasgascar</item>
+        <item>Tiramisu italien </item>
+        <item>Tacos 3 viandes</item>
+        <item>Brownie au 3 chocolat</item>
+        <item>Other Vehicles</item>
+    </string-array>
+
+
 </resources>
