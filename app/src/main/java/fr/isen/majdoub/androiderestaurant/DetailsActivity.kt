@@ -20,7 +20,5 @@ class DetailsActivity : AppCompatActivity() {
             binding.detailsFood.text =intent.getStringExtra(MenuActivity.DETAILS_KEY)
 
 
-
-
     }
 }
