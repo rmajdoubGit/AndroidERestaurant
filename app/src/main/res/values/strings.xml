@@ -5,57 +5,8 @@
     <string name="home_starter">Entrées</string>
     <string name="home_dish">Plats</string>
     <string name="home_desert">Desserts</string>
-
-    <string-array name="starter_list">
-
-        <item>Salade</item>
-        <item>Poisson</item>
-        <item>TOmates</item>
-        <item>Trucks</item>
-        <item>Other Vehicles</item>
-        <item>Other Vehicles</item>
-    </string-array>
-
-    <string-array name="dish_list">
-
-        <item>Riz avec saumon</item>
-        <item>Kebab</item>
-        <item>Tacos</item>
-        <item>Trucks</item>
-        <item>Other Vehicles</item>
-    </string-array>
-    <string-array name="dessert_list">
-
-        <item>Dame Blanche</item>
-        <item>Glace</item>
-        <item>Tiramisu</item>
-        <item>Brownie</item>
-        <item>Other Vehicles</item>
-    </string-array>
-
-    <string-array name="starter_details">
-        <item>une salade composé de tomates cuites avec carrotes</item>
-        <item>poisson frais </item>
-        <item>Tiramisu</item>
-        <item>Brownie</item>
-        <item>Other Vehicles</item>
-    </string-array>
-
-    <string-array name="dish_details">
-        <item>Riz avec du saumon</item>
-        <item>kebab STO </item>
-        <item>Tacos 3 viandes</item>
-        <item>Brownie</item>
-        <item>Other Vehicles</item>
-    </string-array>
-
-    <string-array name="dessert_details">
-        <item>Glace avec vanille de madasgascar</item>
-        <item>Tiramisu italien </item>
-        <item>Tacos 3 viandes</item>
-        <item>Brownie au 3 chocolat</item>
-        <item>Other Vehicles</item>
-    </string-array>
+    <string name="name_dish">Name</string>
+    <string name="price_dish">Price</string>
 
 
 </resources>
