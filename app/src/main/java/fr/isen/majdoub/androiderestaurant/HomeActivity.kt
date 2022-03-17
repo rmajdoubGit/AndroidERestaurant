@@ -12,18 +12,20 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
+
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+
         val view = binding.root
         setContentView(view)
 
-        binding.StarterButton.setOnClickListener {
+        binding.starterText.setOnClickListener {
             chooseCatergory(getString(R.string.home_starter))
         }
-        binding.DishButton.setOnClickListener {
+        binding.dishText.setOnClickListener {
             chooseCatergory(getString(R.string.home_dish))
         }
-        binding.DessertButton.setOnClickListener {
+        binding.dessertText.setOnClickListener {
             chooseCatergory(getString(R.string.home_desert))
         }
 

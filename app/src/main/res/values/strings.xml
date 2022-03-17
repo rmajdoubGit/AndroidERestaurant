@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">AndroidERestaurant</string>
     <string name="home_title">Welcome to</string>
-    <string name="restaurant_title">Fast\'Eat</string>
+    <string name="restaurant_title">Droid\ \'ERestaurant</string>
     <string name="home_starter">Entrées</string>
     <string name="home_dish">Plats</string>
     <string name="home_desert">Desserts</string>
     <string name="name_dish">Name</string>
     <string name="price_dish">Price</string>
+    <string name="menu_title">Title</string>
 
 
 </resources>

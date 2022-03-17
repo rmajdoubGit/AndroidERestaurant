@@ -1,5 +1,6 @@
 package fr.isen.majdoub.androiderestaurant
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.majdoub.androiderestaurant.Menu
+import java.lang.reflect.Array.get
 
 class CategoryAdapter(val contexte : Context,val  categories: Menu)  : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
@@ -34,23 +36,16 @@ class CategoryAdapter(val contexte : Context,val  categories: Menu)  : RecyclerV
         return ViewHolder(view,mListener )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
 
-        var menu = categories.items[position]
+        val menu = categories.items[position]
         holder.dishTile.text = menu.name_fr
-        holder.dishPrice.text = menu.prices[0].price
-        Log.i("image",menu.images[0])
+        holder.dishPrice.text = menu.prices[0].price +"€"
 
-
-        if(menu.images[0]!="") {
-            Picasso.with(contexte).load(menu.images[0]).into(holder.imageDish)
+        if(menu.images[0].isNotEmpty()) {
+            Picasso.get().load(menu.images[0].ifEmpty { null }).error(R.drawable.plat).into(holder.imageDish)
         }
-
-        // sets the image to the imageview from our itemHolder class
-        // holder.imageView.setImageResource(ItemsViewModel.image)
-
-        // sets the text to the textview from our itemHolder class
-        // holder.textView.text = ItemsViewModel.text
     }
 
     override fun getItemCount(): Int {
@@ -65,8 +60,7 @@ class CategoryAdapter(val contexte : Context,val  categories: Menu)  : RecyclerV
         val imageDish : ImageView = ItemView.findViewById(R.id.pictureDish)
 
         init{
-
-            itemView.setOnClickListener{
+            ItemView.setOnClickListener{
                 listener.onItemClick(adapterPosition)
             }
         }

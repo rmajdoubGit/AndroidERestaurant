@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/design_default_color_surface"
+    android:backgroundTint="#F1E1E1"
     tools:context=".HomeActivity">
 
     <TextView
@@ -15,8 +15,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/dynalight"
         android:text="@string/home_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -24,75 +28,83 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.048" />
 
+
     <TextView
         android:id="@+id/NameResto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="500dp"
+        android:fontFamily="@font/dynalight"
         android:text="@string/restaurant_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#F37C60AA"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MenuTitle"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/StarterButton"
+    <TextView
+        android:id="@+id/starterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="112dp"
-        android:backgroundTint="#FFC107"
-        android:fontFamily="@font/bangers"
+        android:layout_marginTop="172dp"
+        android:fontFamily="@font/satisfy"
+        android:rotationY="20"
         android:text="@string/home_starter"
+        android:textColor="#131212"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameResto"
-        tools:ignore="OnClick" />
+        app:layout_constraintTop_toBottomOf="@+id/NameResto" />
 
-    <Button
-        android:id="@+id/DishButton"
+    <TextView
+        android:id="@+id/dishText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#FFC107"
-        android:fontFamily="@font/bangers"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/satisfy"
+        android:rotationY="20"
         android:text="@string/home_dish"
+        android:textColor="#131212"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StarterButton" />
+        app:layout_constraintTop_toBottomOf="@id/starterText" />
 
-    <Button
-        android:id="@+id/DessertButton"
+    <TextView
+        android:id="@+id/dessertText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#FFC107"
-        android:fontFamily="@font/bangers"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/satisfy"
+        android:rotationY="20"
         android:text="@string/home_desert"
+        android:textColor="#131212"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DishButton" />
+        app:layout_constraintTop_toBottomOf="@id/dishText" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="585dp"
-        android:background="@color/white"
-        android:contentDescription="TODO"
-        android:src="@drawable/gladalle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView"
+        android:layout_width="152dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="121dp"
+        android:rotationY="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toEndOf="@+id/NameResto"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857"
-        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameResto"
+        app:srcCompat="@drawable/home_picture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
