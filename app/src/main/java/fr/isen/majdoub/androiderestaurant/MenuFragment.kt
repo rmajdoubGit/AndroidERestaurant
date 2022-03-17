@@ -2,6 +2,6 @@ package fr.isen.majdoub.androiderestaurant
 
 import androidx.fragment.app.Fragment
 
-class MenuFragement : Fragment() {
+class MenuFragment(image: String) : Fragment() {
 
 }

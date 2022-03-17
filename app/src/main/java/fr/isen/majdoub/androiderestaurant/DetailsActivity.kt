@@ -19,14 +19,15 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(view)
         val intent = intent
 
-        binding.foodTitle.text = intent.getStringExtra(MenuActivity.TITLE_KEY)
         val item = intent.getSerializableExtra(MenuActivity.DETAILS_KEY) as Items
+        binding.foodTitle.text = item.name_fr
 
 
-        binding.detailsFood.text = item.ingredients.joinToString(", ")
+
+        binding.detailsFood.text = item.ingredients.joinToString(", ", transform = { it.name_fr })
 
         Log.i("image", item.images.toString())
-        binding.viewSilder.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        //binding.viewSilder.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         //binding.viewSilder.adapter = ViewAdapter(this,item.images)
 
     }
