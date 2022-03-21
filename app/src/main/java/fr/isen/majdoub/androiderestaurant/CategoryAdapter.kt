@@ -11,11 +11,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class CategoryAdapter(val  items: List<Items>, val mListener: (Items) -> Unit)  : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(private val  items: List<Items>, val mListener: (Items) -> Unit)  : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // inflates the card_view_design view
-        // that is used to hold list item
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.cell_category, parent, false)
 
@@ -25,9 +23,20 @@ class CategoryAdapter(val  items: List<Items>, val mListener: (Items) -> Unit)  
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
         val menu = items[position]
+        val id = menu.id.toInt()
         holder.dishTile.text = menu.name_fr
         holder.dishPrice.text = menu.prices[0].price +"€"
-        Picasso.get().load(menu.images[0].ifEmpty { null }).error(R.drawable.plat).into(holder.imageDish)
+
+            Picasso.get().load(menu.images[0].ifEmpty { null })
+                .placeholder(
+                    when(id) {
+                        in 126..128 -> R.drawable.starter
+                        in 129..131 -> R.drawable.plat
+                        in 132..134 -> R.drawable.dessert
+                        else -> R.drawable.home_picture
+                    })
+                .error(R.drawable.plat)
+                .into(holder.imageDish)
 
         holder.itemView.setOnClickListener {
             mListener(menu)

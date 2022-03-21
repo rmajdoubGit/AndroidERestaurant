@@ -16,6 +16,8 @@ data class Menu (
 ): Serializable
 
 data class Items (
+    @SerializedName("id")
+    val id : String,
     @SerializedName("name_fr")
     val name_fr : String,
     @SerializedName("images")
@@ -23,7 +25,7 @@ data class Items (
     @SerializedName("ingredients")
     val ingredients : List<Ingredients>,
     @SerializedName("prices")
-    val prices : ArrayList<Prices>
+    val prices : List<Prices>
 ) : Serializable
 
 data class Prices(

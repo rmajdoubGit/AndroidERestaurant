@@ -26,8 +26,14 @@ class MenuActivity : AppCompatActivity() {
 
         val title = intent.getStringExtra(HomeActivity.CATEGORY_KEY) ?: ""
         binding.categoryTitle.text = title
+
+        when(title) {
+            getString(R.string.home_starter) -> binding.iconItem.setImageResource(R.drawable.starter)
+            getString(R.string.home_dish) -> binding.iconItem.setImageResource(R.drawable.plat)
+            getString(R.string.home_desert) -> binding.iconItem.setImageResource(R.drawable.dessert)
+        }
         binding.ListCategory.layoutManager = LinearLayoutManager(this)
-        binding.ListCategory.adapter = CategoryAdapter(arrayListOf(),{})
+        binding.ListCategory.adapter = CategoryAdapter(arrayListOf()) {}
 
         loadItemsFromServer(title)
     }
@@ -45,10 +51,10 @@ class MenuActivity : AppCompatActivity() {
                 Log.d("MenuActivity", "Api call succes")
                 val menu = Gson().fromJson(response.toString(), Data::class.java)
 
+
                 val items = menu.data.firstOrNull{ it.name_fr == category }?.items ?: arrayListOf() // "?."  propage le null et "?:" si c'est null, Si il n'a pas trouvé d'élement par rapport à la catégorie,il renvoie null
                 val adapter = CategoryAdapter(items) {
                     val intent = Intent(this@MenuActivity, DetailsActivity::class.java)
-
                     intent.putExtra(DETAILS_KEY, it)
                     startActivity(intent)
                 }
@@ -57,6 +63,7 @@ class MenuActivity : AppCompatActivity() {
 
             },
             { error ->
+                Log.d("Error", "$error")
                 Log.d("MenuActivity", "Api call failed")
             }
         )

@@ -8,6 +8,12 @@
     <string name="name_dish">Name</string>
     <string name="price_dish">Price</string>
     <string name="menu_title">Title</string>
+    <string name="defaultQuantity">1</string>
+    <string name="plusIcon">+</string>
+    <string name="minesIcon">-</string>
+    <string name="priceDefaut">0</string>
+    <string name="defaultIngredient" />
+    <string name="defaultTitle" />
 
 
 </resources>
