@@ -14,7 +14,7 @@ import fr.isen.majdoub.androiderestaurant.databinding.ActivityMenuBinding
 import org.json.JSONObject
 
 
-class MenuActivity : AppCompatActivity() {
+class MenuActivity : CartCompactActivity() {
 
     private lateinit var binding: ActivityMenuBinding
 

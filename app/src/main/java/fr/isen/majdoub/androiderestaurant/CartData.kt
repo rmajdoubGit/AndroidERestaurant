@@ -8,17 +8,9 @@ data class Cart(
 ) : Serializable
 
 data class ItemCart(
-
+    var image : String,
     var name : String,
     var quantity : Int,
     var price : Float
 ): Serializable
 
-
-/*{
-    override fun toString(): String {
-        return "Item [name: ${this.name}, quantity: ${this.quantity}, price: ${this.price}]"
-    }
-}
-
- */

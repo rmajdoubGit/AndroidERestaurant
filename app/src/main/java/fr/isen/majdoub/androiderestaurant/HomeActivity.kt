@@ -2,13 +2,14 @@ package fr.isen.majdoub.androiderestaurant
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.majdoub.androiderestaurant.databinding.ActivityHomeBinding
 
 
-
-class HomeActivity : AppCompatActivity() {
+const val CART_PREFERENCE_FILENAME = "fr.isen.majdoub.androiderestaurant.CART_PREFERENCE_FILE_KEY"
+class HomeActivity : CartCompactActivity() {
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,8 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra(CATEGORY_KEY,string)
         startActivity(intent)
     }
+
+
     companion object{
         const val CATEGORY_KEY = "category"
     }
