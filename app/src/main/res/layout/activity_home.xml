@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/design_default_color_surface"
-    android:backgroundTint="#F1E1E1"
+    android:backgroundTint="@color/background_color"
     tools:context=".HomeActivity">
 
     <TextView
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@id/dishText" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pictureHome"
         android:layout_width="152dp"
         android:layout_height="91dp"
         android:layout_marginStart="114dp"

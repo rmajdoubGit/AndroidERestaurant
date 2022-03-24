@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/background_color"
+    android:backgroundTint="@color/background_color">
 
     <ImageView
         android:id="@+id/imDish"
@@ -24,6 +26,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginBottom="36dp"
         android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,7 +37,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/purple_500"
         android:text="@string/minesIcon"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -43,8 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="10dp"
-        android:text="TextView"
-        android:textSize="24sp"
+        android:fontFamily="@font/satisfy"
+        android:text="@string/name_dish"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btReduce"
         app:layout_constraintEnd_toEndOf="parent"

@@ -29,4 +29,11 @@ class CartActivity : CartCompactActivity() {
 
         }
     }
+    /*
+    fun updatePrice(list : Cart){
+
+        binding.buyButton.text = "Commander pour ${list.listItem.sumOf {  }} "
+    }
+
+     */
 }

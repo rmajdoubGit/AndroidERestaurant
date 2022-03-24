@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".DetailsActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
         android:text="@string/defaultTitle"
+        android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,13 +24,14 @@
         android:id="@+id/detailsFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:text="@string/defaultIngredient"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewSilder" />
+        app:layout_constraintTop_toBottomOf="@+id/foodTitle" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewSilder"
@@ -44,54 +47,58 @@
         android:id="@+id/buttonPLus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="#C12525"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="@color/purple_200"
+        android:fontFamily="@font/satisfy"
         android:text="@string/plusIcon"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsFood"
+        app:layout_constraintVertical_bias="0.337" />
 
     <Button
         android:id="@+id/buttonPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:backgroundTint="#22C638"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_200"
         android:text="@string/priceDefaut"
+        android:textSize="20sp"
         app:cornerRadius="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTitle" />
-
-    <TextView
-        android:id="@+id/itemQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:text="@string/defaultQuantity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonMine" />
 
     <Button
         android:id="@+id/buttonMine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="172dp"
-        android:backgroundTint="#214E85"
+        android:layout_marginStart="52dp"
+        android:backgroundTint="@color/purple_200"
+        android:fontFamily="@font/satisfy"
         android:text="@string/minesIcon"
         android:textSize="24sp"
         android:textStyle="bold"
         app:circularflow_defaultRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsFood"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/itemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultQuantity"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsFood"
+        app:layout_constraintVertical_bias="0.753" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
