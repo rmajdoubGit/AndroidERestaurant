@@ -2,7 +2,6 @@ package fr.isen.majdoub.androiderestaurant
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 open class CartCompactActivity : AppCompatActivity() {
-    var textCartItemCount: TextView? = null
+    private var textCartItemCount: TextView? = null
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main,menu)
@@ -44,8 +43,6 @@ open class CartCompactActivity : AppCompatActivity() {
                 "cart",
                 Context.MODE_PRIVATE
             ).getInt("nombre total", 0)
-            Log.i("nombre total après lecture", mCartItemCount.toString())
-
             if (mCartItemCount == 0) {
                 if (textCartItemCount!!.visibility != View.GONE) {
                     textCartItemCount!!.visibility = View.GONE
@@ -57,7 +54,6 @@ open class CartCompactActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
 }

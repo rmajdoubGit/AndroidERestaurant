@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
@@ -46,13 +45,8 @@ class MenuActivity : CartCompactActivity() {
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, url, obj,
             { response ->
-
-                Log.d("Response", "$response")
-                Log.d("MenuActivity", "Api call succes")
                 val menu = Gson().fromJson(response.toString(), Data::class.java)
-
-
-                val items = menu.data.firstOrNull{ it.name_fr == category }?.items ?: arrayListOf() // "?."  propage le null et "?:" si c'est null, Si il n'a pas trouvé d'élement par rapport à la catégorie,il renvoie null
+                val items = menu.data.firstOrNull{ it.name_fr == category }?.items ?: arrayListOf()
                 val adapter = CategoryAdapter(items) {
                     val intent = Intent(this@MenuActivity, DetailsActivity::class.java)
                     intent.putExtra(DETAILS_KEY, it)
@@ -64,19 +58,14 @@ class MenuActivity : CartCompactActivity() {
             },
             { error ->
                 Log.d("Error", "$error")
-                Log.d("MenuActivity", "Api call failed")
             }
         )
         queue.add(jsonObjectRequest)
     }
 
     companion object {
-        const val TITLE_KEY = "title"
         const val DETAILS_KEY = "details"
     }
-
-
-
 }
 
 

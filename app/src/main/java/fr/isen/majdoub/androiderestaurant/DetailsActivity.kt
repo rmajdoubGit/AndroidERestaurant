@@ -17,7 +17,7 @@ class DetailsActivity : CartCompactActivity() {
         val view = binding.root
         setContentView(view)
         val intent = intent
-        var quantity : Int= 1
+        var quantity = 1
         val item = intent.getSerializableExtra(MenuActivity.DETAILS_KEY) as Items
 
         binding.foodTitle.text = item.name_fr
@@ -31,8 +31,7 @@ class DetailsActivity : CartCompactActivity() {
 
         }
         binding.buttonMine.setOnClickListener{
-            if(quantity==1)
-            else {
+            if(quantity!=1) {
                 quantity--
             }
             display(quantity,quantity*item.prices[0].price.toFloat())

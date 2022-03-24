@@ -1,12 +1,10 @@
 package fr.isen.majdoub.androiderestaurant
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import fr.isen.majdoub.androiderestaurant.databinding.ActivityMenuBinding
 import fr.isen.majdoub.androiderestaurant.databinding.CellCartBinding
 
 class CartAdapter(private val  cart: Cart,private val mListener: (ItemCart) -> Unit) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {

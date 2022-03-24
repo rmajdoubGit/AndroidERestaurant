@@ -3,7 +3,6 @@ package fr.isen.majdoub.androiderestaurant
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Log
 import com.google.gson.Gson
 import java.io.File
 
@@ -11,7 +10,6 @@ import java.io.File
 object ShoppingCart {
 
     var panier : Cart = Cart(arrayListOf())
-    var content = panier.listItem
 
     fun updateCart(cartItem: ItemCart,context: Context) {
         if(cartItem.quantity==0){
@@ -26,8 +24,6 @@ object ShoppingCart {
             if(cartItem.quantity>0)
                 panier.listItem.add(cartItem)
         }
-        Log.i("Panier", panier.toString())
-        Log.i("nombre total",panier.listItem.sumOf { it.quantity }.toString())
         saveCart(context)
 
     }
@@ -38,14 +34,12 @@ object ShoppingCart {
         val file = File(context.filesDir,"cart.json")
         file.writeText(panierJson)
         val objectSharedPreference : SharedPreferences = context.getSharedPreferences("cart",Context.MODE_PRIVATE)
-        val editeur = objectSharedPreference.edit()
-        editeur.putInt("nombre total",panier.listItem.sumOf { it.quantity })
-        editeur.apply()
+        val fileSharedPreferences = objectSharedPreference.edit()
+        fileSharedPreferences.putInt("nombre total",panier.listItem.sumOf { it.quantity })
+        fileSharedPreferences.apply()
     }
 
     fun getCart(context: Context): Cart {
-        //Creating a new Gson object to read data
-        Log.d("fichier",context.filesDir.toString())
         val getJson = File(context.filesDir, "cart.json")
         val read = getJson.readText()
         panier = Gson().fromJson(read, Cart::class.java)

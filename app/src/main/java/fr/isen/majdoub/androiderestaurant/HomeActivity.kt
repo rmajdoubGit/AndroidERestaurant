@@ -2,13 +2,8 @@ package fr.isen.majdoub.androiderestaurant
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import fr.isen.majdoub.androiderestaurant.databinding.ActivityHomeBinding
 
-
-const val CART_PREFERENCE_FILENAME = "fr.isen.majdoub.androiderestaurant.CART_PREFERENCE_FILE_KEY"
 class HomeActivity : CartCompactActivity() {
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +27,11 @@ class HomeActivity : CartCompactActivity() {
 
     override fun onStop(){
         super.onStop()
-        Log.d("HomeActivity","L'activité est arrêtée")
+        Log.d("HomeActivity","L'activitée est arrêtée")
     }
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("HomeActivity","L'activité est dértuite")
+        Log.d("HomeActivity","L'activitée est dértuite")
     }
     private fun chooseCatergory(string: String) {
         val intent = Intent(this, MenuActivity::class.java)

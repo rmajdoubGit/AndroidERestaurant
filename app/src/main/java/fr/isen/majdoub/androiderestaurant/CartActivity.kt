@@ -2,8 +2,8 @@ package fr.isen.majdoub.androiderestaurant
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.majdoub.androiderestaurant.databinding.ActivityCartBinding
 
@@ -25,15 +25,23 @@ class CartActivity : CartCompactActivity() {
             item.quantity = -1
             ShoppingCart.updateCart(item,this)
             setupBadge()
+            updatePrice(ShoppingCart.panier.listItem)
             binding.listCart.adapter?.notifyDataSetChanged()
 
         }
-    }
-    /*
-    fun updatePrice(list : Cart){
+        updatePrice(ShoppingCart.panier.listItem)
 
-        binding.buyButton.text = "Commander pour ${list.listItem.sumOf {  }} "
     }
 
-     */
+    @SuppressLint("SetTextI18n")
+    fun updatePrice(list : MutableList<ItemCart>){
+        if(list.sumOf{(it.price* it.quantity).toDouble()}!=0.0){
+            binding.buyButton.text =  "Commander pour ${list.sumOf{(it.price * it.quantity).toDouble()}} €"
+        }
+        else{
+            binding.buyButton.visibility = View.GONE
+        }
+
+    }
+
 }
