@@ -45,18 +45,19 @@
 
     <Button
         android:id="@+id/buttonPLus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/purple_200"
         android:fontFamily="@font/satisfy"
         android:text="@string/plusIcon"
-        android:textSize="24sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailsFood"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <Button
         android:id="@+id/buttonPrice"
@@ -74,13 +75,14 @@
 
     <Button
         android:id="@+id/buttonMine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="76dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/purple_200"
         android:fontFamily="@font/satisfy"
         android:text="@string/minesIcon"
-        android:textSize="24sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:circularflow_defaultRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,6 +94,7 @@
         android:id="@+id/itemQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="@string/defaultQuantity"
         android:textSize="20sp"
         android:textStyle="bold"
